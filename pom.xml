@@ -211,13 +211,19 @@
     </pluginManagement>
   </build>
   <distributionManagement>
-    <snapshotRepository>
-      <id>nexus</id>
-      <url>http://localhost:8081/repository/maven-snapshots/</url>
-    </snapshotRepository>
+  
+	  
+	  
+	  
+	   <repository>
+        <id>deploymentRepoReleases</id>
+        <name>Releases (Nexus)</name>
+        <url>http://nexusserver:8081/nexus/content/repositories/releases/</url>
+    </repository>
     <repository>
-      <id>nexus</id>
-      <url>http://localhost:8081/repository/maven-releases/</url>
+        <id>deploymentRepoSnapshots</id>
+        <name>Snapshots (Nexus)</name>
+        <url>http://nexusserver:8081/nexus/content/repositories/snapshots/</url>
     </repository>
   </distributionManagement>
 
