@@ -33,7 +33,7 @@ public class EmployeServiceImplTest {
 
 	private static final Logger l = LogManager.getLogger(EmployeServiceImplTest.class);
 
-	@Test
+	
 	public void testGetEmployePrenomById() {
 		try {
 			int idE = employeS
@@ -49,7 +49,7 @@ public class EmployeServiceImplTest {
 
 	}
 
-	@Test
+	
 	public void testAjouterEmploye() {
 		try {
 			int id = employeS
@@ -64,7 +64,7 @@ public class EmployeServiceImplTest {
 		}
 	}
 
-	@Test
+
 	public void testMettreAjourEmailByEmployeId() {
 		try {
 			String email = "mehdy.benromdhane@spring.tn";
@@ -82,7 +82,6 @@ public class EmployeServiceImplTest {
 		}
 	}
 
-	@Test
 	public void testDeleteEmployeById() {
 
 		try {

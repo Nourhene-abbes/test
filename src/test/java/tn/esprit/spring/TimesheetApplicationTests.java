@@ -7,7 +7,9 @@ import tn.esprit.spring.controller.ControllerEmployeImpl;
 import tn.esprit.spring.controller.ControllerEntrepriseImpl;
 import tn.esprit.spring.controller.RestControlEmploye;
 import tn.esprit.spring.entities.Departement;
+import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
+import tn.esprit.spring.entities.Role;
 
 
 @SpringBootTest
@@ -19,6 +21,8 @@ class TimesheetApplicationTests {
 	ControllerEmployeImpl employeControl;
 	@Autowired
 	RestControlEmploye RestemployeControl;
+	
+	EmployeServiceImplTest  emptest;
 	
 	@Test
 	void contextLoads() {
@@ -33,7 +37,11 @@ class TimesheetApplicationTests {
 		  ssiiConsulting.setId(ssiiConsultingId);
 		  depTelecom.setEntreprise(ssiiConsulting); 
 		  depRH.setEntreprise(ssiiConsulting);
-
+		  
+		  emptest.testAjouterEmploye();
+		  emptest.testGetEmployePrenomById();
+		  
+                     
  
 	}
 }
