@@ -9,7 +9,7 @@ networks:
       expose:
         -"8088"
       environment:
-        SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/hemisphere
+        SPRING_DATASOURCE_URL: jdbc:mysql://192.168.249.1:3306/devopsdb
       networks:
         - app-network  
       restart: unless-stopped
