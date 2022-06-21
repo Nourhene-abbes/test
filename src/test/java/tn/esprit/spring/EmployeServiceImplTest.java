@@ -33,14 +33,14 @@ public class EmployeServiceImplTest {
 
 	private static final Logger l = LogManager.getLogger(EmployeServiceImplTest.class);
 
-	
+	@Test
 	public void testGetEmployePrenomById() {
 		try {
 			int idE = employeS
-					.ajouterEmploye(new Employe("Mehdy", "benromdhane", "mehdy.benromdhane@spring.tn", true, Role.TECHNICIEN));
+					.ajouterEmploye(new Employe("Nounou", "Abbes", "Nounou.Abbes@spring.tn", true, Role.TECHNICIEN));
 			String prenomEmp = employeS.getEmployePrenomById(idE);
 			l.info("------> Prenom de lemploye est : " + prenomEmp);
-			assertThat(prenomEmp).isEqualTo("benromdhane");
+			assertThat(prenomEmp).isEqualTo("Abbes");
 			employeS.deleteEmployeById(idE);
 		} catch (Exception e) {
 			l.error(String.format("Erreur dans Get EmployePrenom By Id : %s ", e));
@@ -49,11 +49,11 @@ public class EmployeServiceImplTest {
 
 	}
 
-	
+	@Test
 	public void testAjouterEmploye() {
 		try {
 			int id = employeS
-					.ajouterEmploye(new Employe("Mehdy", "benromdhane", "mehdy.benromdhane@spring.tn", true, Role.INGENIEUR));
+					.ajouterEmploye(new Employe("Nounou", "Abbes", "Nounou.Abbes@spring.tn", true, Role.INGENIEUR));
 
 			assertThat(id).isPositive();
 			l.info("Employe added successfully!");
@@ -64,12 +64,12 @@ public class EmployeServiceImplTest {
 		}
 	}
 
-
+	@Test
 	public void testMettreAjourEmailByEmployeId() {
 		try {
-			String email = "mehdy.benromdhane@spring.tn";
+			String email = "Nounou.Abbes@spring.tn";
 			int id = employeS
-					.ajouterEmploye(new Employe("Mehdy", "benromdhane", "mehdy.benromdhane@gmail.com", true, Role.INGENIEUR));
+					.ajouterEmploye(new Employe("Nounou", "Abbes", "Nounou.Abbes@gmail.com", true, Role.INGENIEUR));
 
 			employeS.mettreAjourEmailByEmployeId(email, id);
 
@@ -82,21 +82,19 @@ public class EmployeServiceImplTest {
 		}
 	}
 
-	public void testDeleteEmployeById() {
-
-		try {
-			int id = employeS
-					.ajouterEmploye(new Employe("Mehdy", "benromdhane", "mehdy.benromdhane@gmail.com", true, Role.INGENIEUR));
-
-			employeS.deleteEmployeById(id);
-
-			Employe e = employeS.getEmployerById(id);
-
-			assertThat(e).isNull();
-			l.info("--->Employe deleted successfully!");
-		} catch (Exception e) {
-			l.error(String.format("Erreur dans Delete Employe By Id : %s ", e));
-		}
-	}
+	/*
+	 * @Test public void testDeleteEmployeById() {
+	 * 
+	 * try { int id = employeS .ajouterEmploye(new Employe("Nounou", "Abbes",
+	 * "Nounou.Abbes@gmail.com", true, Role.INGENIEUR));
+	 * 
+	 * employeS.deleteEmployeById(id);
+	 * 
+	 * Employe e = employeS.getEmployerById(id);
+	 * 
+	 * assertThat(e).isNull(); l.info("--->Employe deleted successfully!"); } catch
+	 * (Exception e) {
+	 * l.error(String.format("Erreur dans Delete Employe By Id : %s ", e)); } }
+	 */
 
 }
