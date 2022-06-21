@@ -13,7 +13,7 @@ pipeline {
 	  
         	stage('Run Docker-compose') {
                 	steps {
-                   	bat "docker-compose version"
+                   	bat "docker-compose up"
             	}
         	}
 			
